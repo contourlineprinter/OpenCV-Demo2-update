@@ -9,3 +9,13 @@ More complex contour can also represented by same approach. Polygon approximatio
 2. Fileter complex background from the image
 For this case, we are trying to filter those contour with lower area amount, and assumpt that the largest area is representing the main object of the image. So after detect edges, we find contours and create a mast to pick the contour having the largest area and draw it to it. Then fill the mask to and smooth the mast using dilate and erode operation. Then blur the mask to remove any gap. In the last step, we apply the mask on original image and leave other background erased. Final image will be image contain in the mask.
 Issue: Main issue is that there are many patterns of background. The assumption is to mask the largest area of contour. However, not every image will hold this pattern. Some picture may have multiple main objects, or the background is larger than main object and so on. Deeper research will be needed if we want to deal with more kinds of image, and it can be accomplished in demo 3.
+
+
+There are possible approach or algorithms which we can use alone or in combination of each other for improvement of background filter.
+1.Interactive foreground extraction using grab-cut algorithm.
+2.Extracting foreground using watershed transformations.
+3.Gaussian Mixture-based Background/Foreground Segmentation Algorithm.
+4.Background Subtraction Based on colour and Depth approach.
+5.Background removal using robust PCA.
+
+This is a big design pattern, the testing scripts is still implementing. 
