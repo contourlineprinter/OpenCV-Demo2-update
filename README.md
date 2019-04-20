@@ -19,3 +19,20 @@ There are possible approach or algorithms which we can use alone or in combinati
 5.Background removal using robust PCA.
 
 This is a big design pattern, the testing scripts is still implementing. 
+
+OpenCV-Demo3-backgroundfilter design
+grab=cut is useful approach for selecting the main object and removing evertying outside the object as background. It also removes any pattern similar to background within the main object. The compare area method in last demo is also combined in this approach.
+1.Fixing the rectangle for the main object
+2.Apply grab-cout on the image using the rectangel defined above
+3. Apply mask on the original image leaving background details
+4. pass the converted image to next step as input image
+5. convert image to grayscale
+6. detect edges and find contours
+7. create a mask, so pick the contour having the largest area dn draw it on the mask
+8.fill the mask to close the optn path
+9.smooth the mak using dilate and erode operation
+10.blur the mask to remove any gap in the path
+11.apply the mak on the original image, this will leave other background and leave main object inside the mask
+12.final image will have image contained within the mask boudary
+
+issues: image is still rough and may mask wrong object if the setting is not correct. Also, if there are multiple main objects, I still do not have a efficient way to mask the background and leave multiple background. 
