@@ -35,4 +35,4 @@ grab=cut is useful approach for selecting the main object and removing evertying
 11.apply the mak on the original image, this will leave other background and leave main object inside the mask
 12.final image will have image contained within the mask boudary
 
-issues: image is still rough and may mask wrong object if the setting is not correct. Also, if there are multiple main objects, I still do not have a efficient way to mask the background and leave multiple background. 
+issues: image is still rough and may mask wrong object if the setting is not correct. Also, if there are multiple main objects, I still do not have a efficient way to mask the background. Especially for the images that full with background stuff. Right now if there are multiple objects, the object will be stayed but still have slight background left. Also, the background filter process takes time, it may spend more than 30s to process the image background filter process. 
