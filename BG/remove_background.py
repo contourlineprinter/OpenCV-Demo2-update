@@ -8,7 +8,7 @@ THRESH1 = 15
 THRESH2 = 180
 COLOR = (1.0, 1.0, 1.0)
 
-img = cv2.imread('2.jpg')
+img = cv2.imread('bg1.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 edges = cv2.Canny(gray, THRESH1, THRESH2)
